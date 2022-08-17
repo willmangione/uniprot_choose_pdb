@@ -5,8 +5,10 @@ import sys
 import argparse
 
 
-parser = argparse.ArgumentParser(description='This script will select the lowest resolution PDB chains '
-                                             'corresponding to a query UniProt ID')
+parser = argparse.ArgumentParser(description='This script will select the lowest resolution PDB chains corresponding to a query UniProt ID.' 
+                                 'If using locally or on a separate cluster, first run'
+                                 '"wget http://protinfo.compbio.buffalo.edu/cando/data/v2.2+/mappings/pdb_2_uniprot.csv"'
+                                 'and then use the following flag: "-l pdb_2_uniprot.csv" for all subsequent runs.')
 parser.add_argument('-u', '--uniprot', help='The query UniProt ID', required=False)
 parser.add_argument('-b', '--batch', help='Path to file containing UniProt IDs on each line', required=False)
 parser.add_argument('-o', '--out', help='Name of file to save output of batch', required=False)
